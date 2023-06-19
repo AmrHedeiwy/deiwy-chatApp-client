@@ -1,4 +1,4 @@
-import { registrationSchema } from './validations/auth.validation.js';
+import { registerHandler } from './event-handler/auth.js';
 
 import { io } from 'socket.io-client';
 const socket = io('http://localhost:3000');
@@ -34,46 +34,7 @@ loginForm.addEventListener('submit', (e) => {
   );
 });
 
-registerForm.addEventListener('submit', async (e) => {
-  e.preventDefault();
-
-  const formElements = {
-    registerFirstname: '',
-    registerLastname: '',
-    registerUsername: '',
-    registerEmail: '',
-    registerPassword: '',
-    registerRepeatPassword: '',
-    registerCheck: false
-  };
-
-  document.querySelectorAll('input').forEach((input) => {
-    if (input.id in formElements) {
-      if (input.type === 'checkbox') {
-        formElements[input.id] = input.checked;
-      } else {
-        formElements[input.id] = input.value;
-      }
-    }
-  });
-
-  const body = {
-    Firstname: formElements.registerFirstname,
-    Lastname: formElements.registerLastname,
-    Username: formElements.registerUsername,
-    Email: formElements.registerEmail,
-    Password: formElements.registerPassword,
-    RepeatPassword: formElements.registerRepeatPassword
-  };
-
-  try {
-    await registrationSchema.validate(body, { abortEarly: false });
-  } catch (err) {
-    console.log(err.errors);
-  }
-
-  // requestToServer('/auth/register', 'POST', body);
-});
+registerForm.addEventListener('submit', registerHandler);
 
 const requestToServer = async (url, method, body) => {
   const params = {

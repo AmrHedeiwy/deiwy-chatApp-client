@@ -11,8 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "socket.io-client": "^4.6.2",
-    "yup": "^1.2.0"
+    "socket.io-client": "^4.6.2"
   },
   "devDependencies": {
     "buffer": "^6.0.3",
