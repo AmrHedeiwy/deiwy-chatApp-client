@@ -1,4 +1,6 @@
-export function registerHandler(e) {
+import { requestToServer } from '../requests/auth.request.js';
+
+export async function registerHandler(e) {
   e.preventDefault();
 
   const formElements = {
@@ -30,6 +32,6 @@ export function registerHandler(e) {
     RepeatPassword: formElements.registerRepeatPassword
   };
 
-  console.log(body);
-  // requestToServer('/auth/register', 'POST', body);
+  const response = await requestToServer('/auth/register', 'POST', body);
+  console.log(response);
 }

@@ -90,7 +90,7 @@
           </form>
         </div>
         <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
-          <form id="registerForm" novalidate>
+          <form class="needs-validation" id="registerForm" novalidate>
             <div class="text-center mb-3">
               <p>Sign up with:</p>
               <!-- Facebook -->
@@ -107,44 +107,44 @@
 
             <!-- First Name input -->
             <div class="form-outline mb-4">
-              <input type="text" id="registerFirstname" class="form-control" />
+              <input type="text" id="registerFirstname" class="form-control" required />
               <label class="form-label" for="registerFirstname">First Name</label>
             </div>
 
             <!-- Last Name input -->
             <div class="form-outline mb-4">
-              <input type="text" id="registerLastname" class="form-control" />
+              <input type="text" id="registerLastname" class="form-control" required />
               <label class="form-label" for="registerLastname">Last Name</label>
             </div>
 
             <!-- Username input -->
             <div class="form-outline mb-4">
-              <input type="text" id="registerUsername" class="form-control" />
+              <input type="text" id="registerUsername" class="form-control" required />
               <label class="form-label" for="registerUsername">Username</label>
             </div>
 
             <!-- Email input -->
             <div class="form-outline mb-4">
-              <input type="email" id="registerEmail" class="form-control" />
+              <input type="email" id="registerEmail" class="form-control" required />
               <label class="form-label" for="registerEmail">Email</label>
             </div>
 
             <!-- Password input -->
             <div class="form-outline mb-4">
-              <input type="password" id="registerPassword" class="form-control" />
+              <input type="password" id="registerPassword" class="form-control" required />
               <label class="form-label" for="registerPassword">Password</label>
             </div>
 
             <!-- Repeat Password input -->
             <div class="form-outline mb-4">
-              <input type="password" id="registerRepeatPassword" class="form-control" />
+              <input type="password" id="registerRepeatPassword" class="form-control" required />
               <label class="form-label" for="registerRepeatPassword">Repeat password</label>
             </div>
 
             <!-- Checkbox -->
             <div class="form-check d-flex justify-content-center mb-4">
               <input class="form-check-input me-2" type="checkbox" id="registerCheck" checked
-                aria-describedby="registerCheckHelpText" />
+                aria-describedby="registerCheckHelpText" required />
               <label class="form-check-label" for="registerCheck">
                 I have read and agree to the terms
               </label>
